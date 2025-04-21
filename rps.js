@@ -17,7 +17,7 @@ function getComputerChoice(max) {
   function getHumanChoice() {
     let choice = prompt("Choose Rock, Paper or Scissors:")
     finalChoice = choice.toUpperCase();
-    if (finalChoice === "ROCK" || finalChoice === "SCISSORS" || finalChoice === "ROCK"){
+    if (finalChoice === "ROCK" || finalChoice === "SCISSORS" || finalChoice === "PAPER"){
     return finalChoice;
     }
     else{
@@ -26,3 +26,10 @@ function getComputerChoice(max) {
   
   }
   console.log(getHumanChoice());
+
+  let counterHuman = 0
+  let counterComputer = 0
+  let humanScore = ++counterHuman;
+  let computerScore = ++counterComputer; 
+  alert(humanScore);
+  alert(computerScore);
