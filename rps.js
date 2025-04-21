@@ -25,30 +25,44 @@ function getComputerChoice(max) {
 
   let counterHuman = 0
   let counterComputer = 0
-  let humanScore = ++counterHuman;
-  let computerScore = ++counterComputer; 
   //alert(humanScore);
   //alert(computerScore);
 
   function playRound(humanChoice, computerChoice){
+    let humanScore = counterHuman;
+    let computerScore = counterComputer;
     if (humanChoice === "ROCK" && computerChoice === "SCISSORS"){
-        return "You win! Rock beats scissors!";}
+        humanScore = ++counterHuman;
+        return "You win! Rock beats scissors! You: " + humanScore + " Computer: " + computerScore;}
+
     else if (humanChoice === "ROCK" && computerChoice === "PAPER"){
-        return "You lose! Paper beats rock!";}
+        computerScore = ++counterComputer;
+        return "You lose! Paper beats rock! You: " + humanScore + " Computer: " + computerScore;}
+
     else if (humanChoice === "ROCK" && computerChoice === "ROCK"){
-        return "It's a tie!";}
+        return "It's a tie! You: " + humanScore + " Computer: " + computerScore;}
+
     else if (humanChoice === "SCISSORS" && computerChoice === "SCISSORS"){
         return "It's a tie!";}
+
     else if (humanChoice === "SCISSORS" && computerChoice === "PAPER"){
+        humanScore = ++counterHuman;
         return "You win! Scissors beats paper!";}
+
     else if (humanChoice === "SCISSORS" && computerChoice === "ROCK"){
+        computerScore = ++counterComputer;
         return "You lose! Rock beats scissors!";}
+
     else if (humanChoice === "PAPER" && computerChoice === "SCISSORS"){
-            return "You lose! Scissors beats paper!";}
+        computerScore = ++counterComputer;
+        return "You lose! Scissors beats paper! You: " + humanScore + " Computer: " + computerScore;}
+
     else if (humanChoice === "PAPER" && computerChoice === "PAPER"){
-            return "It's a tie!";}
+        return "It's a tie!";}
+
     else if (humanChoice === "PAPER" && computerChoice === "ROCK"){
-            return "You win! Paper beats rock!"; 
+        humanScore = ++counterHuman;
+        return "You win! Paper beats rock!"; 
   }
 }
 
