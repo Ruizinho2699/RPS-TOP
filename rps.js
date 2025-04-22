@@ -43,26 +43,26 @@ function getComputerChoice(max) {
         return "It's a tie! You: " + humanScore + " Computer: " + computerScore;}
 
     else if (humanChoice === "SCISSORS" && computerChoice === "SCISSORS"){
-        return "It's a tie!";}
+        return "It's a tie! You: " + humanScore + " Computer: " + computerScore;}
 
     else if (humanChoice === "SCISSORS" && computerChoice === "PAPER"){
         humanScore = ++counterHuman;
-        return "You win! Scissors beats paper!";}
+        return "You win! Scissors beats paper! You: " + humanScore + " Computer: " + computerScore;}
 
     else if (humanChoice === "SCISSORS" && computerChoice === "ROCK"){
         computerScore = ++counterComputer;
-        return "You lose! Rock beats scissors!";}
+        return "You lose! Rock beats scissors! You: " + humanScore + " Computer: " + computerScore;}
 
     else if (humanChoice === "PAPER" && computerChoice === "SCISSORS"){
         computerScore = ++counterComputer;
         return "You lose! Scissors beats paper! You: " + humanScore + " Computer: " + computerScore;}
 
     else if (humanChoice === "PAPER" && computerChoice === "PAPER"){
-        return "It's a tie!";}
+        return "It's a tie! You: " + humanScore + " Computer: " + computerScore;}
 
     else if (humanChoice === "PAPER" && computerChoice === "ROCK"){
         humanScore = ++counterHuman;
-        return "You win! Paper beats rock!"; 
+        return "You win! Paper beats rock! You: " + humanScore + " Computer: " + computerScore; 
   }
 }
 
