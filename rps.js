@@ -66,8 +66,18 @@ function getComputerChoice(max) {
   }
 }
 
+   function inbetween(){
    const humanSelection = getHumanChoice();
    const computerSelection = getComputerChoice(3); 
    console.log(playRound(humanSelection,computerSelection));
+   }
 
-  
+   function playGame(round,number){
+    if (number<=0){
+        return;
+    }
+    round();
+    playGame(round,number-1);
+    }
+
+   playGame(inbetween,5);
