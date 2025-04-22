@@ -27,10 +27,11 @@ function getComputerChoice(max) {
   let counterComputer = 0
   //alert(humanScore);
   //alert(computerScore);
+  let humanScore = counterHuman;
+  let computerScore = counterComputer;
 
   function playRound(humanChoice, computerChoice){
-    let humanScore = counterHuman;
-    let computerScore = counterComputer;
+    
     if (humanChoice === "ROCK" && computerChoice === "SCISSORS"){
         humanScore = ++counterHuman;
         return "You win! Rock beats scissors! You: " + humanScore + " Computer: " + computerScore;}
@@ -81,3 +82,13 @@ function getComputerChoice(max) {
     }
 
    playGame(inbetween,5);
+
+   if(humanScore>computerScore){
+    console.log("You win!");
+   }
+   else if(humanScore<computerScore){
+    console.log("You lose!");
+   }
+   else{
+    console.log("It's a tie!");
+   }
