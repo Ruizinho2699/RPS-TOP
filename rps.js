@@ -1,5 +1,3 @@
-
-
 function getComputerChoice(max) {
     let x = Math.floor(Math.random()*max);
     if (x == 1){
@@ -67,28 +65,21 @@ function getComputerChoice(max) {
   }
 }
 
-   function inbetween(){
-   const humanSelection = getHumanChoice();
-   const computerSelection = getComputerChoice(3); 
-   console.log(playRound(humanSelection,computerSelection));
-   }
 
-   function playGame(round,number){
-    if (number<=0){
-        return;
-    }
-    round();
-    playGame(round,number-1);
-    }
+const btnRock = document.querySelector("#btnRock");
+btnRock.addEventListener("click", () => {
+  console.log(playRound("ROCK",getComputerChoice(3)));
+});
 
-   playGame(inbetween,5);
+const btnPaper = document.querySelector("#btnPaper");
+btnPaper.addEventListener("click", () => {
+  console.log(playRound("PAPER",getComputerChoice(3)));
+});
 
-   if(humanScore>computerScore){
-    console.log("You win!");
-   }
-   else if(humanScore<computerScore){
-    console.log("You lose!");
-   }
-   else{
-    console.log("It's a tie!");
-   }
+const btnScissors = document.querySelector("#btnScissors");
+btnScissors.addEventListener("click", () => {
+  console.log(playRound("SCISSORS",getComputerChoice(3)));
+});
+
+
+
