@@ -28,6 +28,7 @@ function getComputerChoice(max) {
   let humanScore = counterHuman;
   let computerScore = counterComputer;
 
+
   function playRound(humanChoice, computerChoice){
     
     if (humanChoice === "ROCK" && computerChoice === "SCISSORS"){
@@ -64,22 +65,56 @@ function getComputerChoice(max) {
         return "You win! Paper beats rock! You: " + humanScore + " Computer: " + computerScore; 
   }
 }
-
-
+const score = document.querySelector("div1");
+score.classList.add("score");
+score.setAttribute("style","color:red;")
+function playGame(){
 const btnRock = document.querySelector("#btnRock");
 btnRock.addEventListener("click", () => {
-  console.log(playRound("ROCK",getComputerChoice(3)));
+  playRound("ROCK",getComputerChoice(3));
+  score.textContent = "You: " + humanScore + " Computer: " + computerScore;
+  if(humanScore === 5){
+    fscore.textContent = "You win!";
+  }
+  else if(computerScore === 5){
+    fscore.textContent = "Computer wins!";
+  }
 });
 
 const btnPaper = document.querySelector("#btnPaper");
 btnPaper.addEventListener("click", () => {
-  console.log(playRound("PAPER",getComputerChoice(3)));
+  playRound("PAPER",getComputerChoice(3));
+  score.textContent = "You: " + humanScore + " Computer: " + computerScore;
+  if(humanScore === 5){
+    fscore.textContent = "You win!";
+  }
+  else if(computerScore === 5){
+    fscore.textContent = "Computer wins!";
+  }
 });
 
 const btnScissors = document.querySelector("#btnScissors");
 btnScissors.addEventListener("click", () => {
-  console.log(playRound("SCISSORS",getComputerChoice(3)));
+  playRound("SCISSORS",getComputerChoice(3));
+  score.textContent = "You: " + humanScore + " Computer: " + computerScore;
+  if(humanScore === 5){
+    fscore.textContent = "You win!";
+  }
+  else if(computerScore === 5){
+    fscore.textContent = "Computer wins!";
+  }
 });
+
+}
+
+const fscore = document.querySelector("div");
+fscore.classList.add("fscore");
+fscore.setAttribute("style","color:blue;")
+playGame();
+
+
+
+
 
 
 
